@@ -5,8 +5,6 @@
 #include <vector>
 #include <iostream>
 #include "Location.hpp"
-#include "Request.hpp"
-#include "Response.hpp"
 #include "Utils.hpp"
 
 class Location;
@@ -27,10 +25,6 @@ class Server {
 		Server(const Server &ref);
 		Server &operator=(const Server &ref);
 		~Server();
-
-		void	sendResponse(int fd, Request &req);
-		
-		Utils::server_config	serverConfig();
 		
 		void								errorPages(int id, std::string &data);
 		const std::map<int, std::string>	&errorPages() const;

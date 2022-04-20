@@ -22,29 +22,6 @@ Server &Server::operator=(const Server &ref) {
 
 Server::~Server() {};
 
-Utils::server_config	Server::serverConfig() {
-    Utils::server_config   config;
-
-    config.server_names = _server_names;
-    config.host = _host;
-    config.root = _root;
-    config.port = _port;
-    config.fd = _fd;
-    config.client_max_body_size = _client_max_body_size;
-    config.error_pages = _error_pages;
-    config.locations = _locations;
-    return (config);
-}
-
-void	Server::sendResponse(int fd, Request &req) {
-    Response    res(req);
-    std::string data;
-
-    std::cout << res.response() << std::endl;
-	send(fd, res.response().c_str(), res.response().length(), 0);
-}
-
-
 void							    Server::errorPages(int id, std::string &data) { _error_pages[id] = data; }
 const std::map<int, std::string>    &Server::errorPages() const { return _error_pages; }
 

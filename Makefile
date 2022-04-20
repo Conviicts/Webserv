@@ -10,8 +10,6 @@ SRCS	=	main.cpp		\
 			Server.cpp		\
 			Location.cpp	\
 			Client.cpp		\
-			Request.cpp		\
-			Response.cpp	\
 			Utils.cpp
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))

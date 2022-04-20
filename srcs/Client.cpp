@@ -41,10 +41,9 @@ void    Client::receive(void) {
         
         break;
     }
-    _request.parse(_received, _server->serverConfig(), _received.size());
     _is_ready = true;
 }
 
 void    Client::wait(void) {
-    _server->sendResponse(_fd, _request);
+    
 }
